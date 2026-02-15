@@ -1,0 +1,59 @@
+@import "tailwindcss";
+
+@theme {
+    --color-primary: #0f766e;
+    --color-primary-dark: #0d5d56;
+    --color-secondary: #1e293b;
+    --color-secondary-light: #334155;
+    --color-accent: #f0fdfa;
+    --color-gold: #d4af37;
+    --color-light-bg: #f8fafc;
+
+    --font-serif: "Playfair Display", serif;
+    --font-sans: "Inter", sans-serif;
+}
+
+@layer base {
+    html {
+        scroll-behavior: smooth;
+    }
+
+    body {
+        @apply font-sans text-gray-700 antialiased bg-white;
+    }
+
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+        @apply font-serif text-secondary;
+    }
+}
+
+@layer components {
+    .btn-primary {
+        @apply bg-linear-to-r from-primary to-teal-600 text-white px-8 py-3 rounded-lg hover:shadow-lg transition-all duration-300 font-sans font-semibold uppercase tracking-wide text-sm transform hover:-translate-y-1;
+    }
+
+    .btn-secondary {
+        @apply bg-secondary text-white px-8 py-3 rounded-lg hover:bg-secondary-light transition-colors duration-300 font-sans font-semibold uppercase tracking-wide text-sm;
+    }
+
+    .section-title {
+        @apply text-4xl md:text-5xl lg:text-6xl font-serif font-bold text-secondary text-center mb-4 leading-tight;
+    }
+
+    .section-subtitle {
+        @apply text-primary text-center uppercase tracking-widest text-sm mb-12 font-sans font-semibold;
+    }
+
+    .glass-effect {
+        @apply bg-white/80 backdrop-blur-md border border-white/20;
+    }
+
+    .gradient-text {
+        @apply bg-linear-to-r from-primary to-teal-600 bg-clip-text text-transparent;
+    }
+}
